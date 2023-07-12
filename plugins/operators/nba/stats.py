@@ -75,9 +75,7 @@ class NBAStatsOperator(BaseOperator):
 
 
 if __name__ == "__main__":
-    year = datetime(1999,1,1).year
-    
     with DAG(dag_id = "SalaryTest", start_date=datetime.now()) as dag:
-        nso = NBAStatsOperator(year=year, task_id="test_run")
-        ti = TaskInstance(task=nso)
-        nso.execute(ti.task_id)
+        nso = NBAStatsOperator(task_id="test_run", process_date="{{ ds }}")
+        nso
+    dag.test()
