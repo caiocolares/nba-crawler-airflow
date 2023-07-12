@@ -7,24 +7,19 @@ Airflow project...
 - [@caiocolares](https://www.github.com/caiocolares)
 
 
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/caiocolares/nba-crawler-airflow.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd nba-crawler-airflow
 ```
 
 
@@ -36,7 +31,7 @@ source .venv/bin/activate
 
 ```
 
-Define environment variables
+## Environment Variables
 
 ```
 export AIRFLOW_HOME=$(pwd)
@@ -55,14 +50,14 @@ Install python depedencies
 
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
+pip install beautifulsoup4
 pip install lxml
-pip install bs4
 pip install pandas
 
 ```
 
 
-Start airflow standalone 
+## Start Project 
 
 ```
 
@@ -75,9 +70,18 @@ Get admin password on file `standalone_admin_password.txt`
 
 Access [admin panel](http://localhost:8080)
 
+![Login](https://raw.githubusercontent.com/caiocolares/nba-crawler-airflow/main/images/login.png)
 
+![DAG](https://raw.githubusercontent.com/caiocolares/nba-crawler-airflow/main/images/dag.png)
 
 ## Tech Stack
 
 
 **Server:** Airflow, Python, Pandas
+
+## Acknowledgements
+
+- [Airflow] (https://airflow.apache.org/)
+- [Pandas] (https://pandas.pydata.org/)
+- [BeautifulSoup4] (https://pypi.org/project/beautifulsoup4/)
+
