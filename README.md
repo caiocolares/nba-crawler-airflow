@@ -35,6 +35,7 @@ source .venv/bin/activate
 
 ```
 export AIRFLOW_HOME=$(pwd)
+export AIRFLOW__CORE__LOAD_EXAMPLES=False
 
 AIRFLOW_VERSION=2.6.2
 

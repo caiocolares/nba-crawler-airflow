@@ -66,7 +66,6 @@ class NBABioOperator(BaseOperator):
 
 if __name__ == "__main__":
     with DAG(dag_id = "SalaryTest", start_date=datetime.now()) as dag:
-        nbo = NBABioOperator(task_id="test_run", process_date="{{ ds }}")
-        nbo
+        NBABioOperator(task_id="test_run", process_date="{{ ds }}")
     dag.test()
 
