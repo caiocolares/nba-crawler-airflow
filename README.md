@@ -72,6 +72,9 @@ Access [admin panel](http://localhost:8080)
 
 ![DAG](https://raw.githubusercontent.com/caiocolares/nba-crawler-airflow/main/images/dag.png)
 
+### Testing the operator
+![image](https://github.com/caiocolares/nba-crawler-airflow/assets/26276218/b8bd4a52-6541-4cd1-ada0-e8eac02d8c86)
+
 ## Tech Stack
 
 
