@@ -81,7 +81,7 @@ Access [admin panel](http://localhost:8080)
 
 ## Acknowledgements
 
-- [Airflow] (https://airflow.apache.org/)
-- [Pandas] (https://pandas.pydata.org/)
-- [BeautifulSoup4] (https://pypi.org/project/beautifulsoup4/)
+- [Airflow](https://airflow.apache.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/)
 
