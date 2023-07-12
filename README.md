@@ -69,11 +69,13 @@ Get admin password on file `standalone_admin_password.txt`
 
 Access [admin panel](http://localhost:8080)
 
-![image](https://github.com/caiocolares/nba-crawler-airflow/assets/26276218/e59f89d5-7e73-4c15-869e-fbb4650b854b)
-
+#### Graph
 ![image](https://github.com/caiocolares/nba-crawler-airflow/assets/26276218/e50628a5-d4f7-4259-9754-1c5b2c5d9593)
 
-### Testing the operator directly
+#### Dag running
+![image](https://github.com/caiocolares/nba-crawler-airflow/assets/26276218/6bdf4a65-c794-4735-9727-442d90a08ebd)
+
+#### Testing the operator directly
 ![image](https://github.com/caiocolares/nba-crawler-airflow/assets/26276218/b8bd4a52-6541-4cd1-ada0-e8eac02d8c86)
 
 ## Tech Stack
