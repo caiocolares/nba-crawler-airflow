@@ -65,10 +65,8 @@ class NBABioOperator(BaseOperator):
 
 
 if __name__ == "__main__":
-    year = datetime(1999,1,1).year
-    
     with DAG(dag_id = "SalaryTest", start_date=datetime.now()) as dag:
-        nbo = NBABioOperator(year=year, task_id="test_run")
-        ti = TaskInstance(task=nbo)
-        nbo.execute(ti.task_id)
+        nbo = NBABioOperator(task_id="test_run", process_date="{{ ds }}")
+        nbo
+    dag.test()
 

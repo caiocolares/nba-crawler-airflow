@@ -34,3 +34,5 @@ with DAG(
 
     [stats_operator, salary_operator] >> bio_operator >> merge_operator
     
+if __name__ == "__main__":
+    dag.test()
