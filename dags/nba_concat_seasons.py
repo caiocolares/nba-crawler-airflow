@@ -1,14 +1,15 @@
 from airflow import DAG
 from airflow.decorators import task
 from datetime import datetime
-from os.path import isfile
+from os.path import isfile, join, exists
+from os import listdir
 import pandas as pd
 from datetime import datetime
 
 with DAG(
     "nba_concat_seasons", 
-    start_date=datetime(2000, 1, 1),
-    schedule=None, # Don’t schedule, use for exclusively “externally triggered” DAGs
+    start_date=datetime.now(),
+    schedule="@once", # Don’t schedule, use for exclusively “externally triggered” DAGs
     description="Nba concat seasons in base path",
     tags=['NBA', 'Crawler', 'Statistics']
 ) as dag:
@@ -27,15 +28,17 @@ with DAG(
     @task()
     def concat_file():
         df = pd.DataFrame(columns=columns)
-        for y in range(1999, datetime.now().year):
-            filename = '{}/season_{}_{}/infos.csv'.format(base_path, y, y + 1)
-            if isfile(filename):
+
+        for folder in [f for f in listdir(base_path) if not isfile(join(base_path, f))]:
+            filename = join(base_path, folder, 'infos.csv')
+            if exists(filename):
                 df_temp = pd.read_csv(filename)
                 df = pd.concat([df, df_temp], ignore_index=True)
         df.sort_values(by=['playerId', 'year'], inplace=True)
         df.to_csv(base_path + '/nba_concat_seasons.csv', index=False)
 
     concat_file()
+
 
 if __name__ == "__main__":
     dag.test()
