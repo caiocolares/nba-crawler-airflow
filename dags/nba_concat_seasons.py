@@ -9,7 +9,7 @@ from datetime import datetime
 with DAG(
     "nba_concat_seasons", 
     start_date=datetime.now(),
-    schedule="@once", # Don’t schedule, use for exclusively “externally triggered” DAGs
+    schedule=None, # Don’t schedule, use for exclusively “externally triggered” DAGs
     description="Nba concat seasons in base path",
     tags=['NBA', 'Crawler', 'Statistics']
 ) as dag:
